@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Response</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 100%;
+            /* margin-top: 4000px; */
+
+        }
+        h1 {
+            font-family: 'Verdana', sans-serif;
+            color: #ff7e5f;
+        }
+        h2 {
+            font-size: 18px;
+            color: #ff7e5f;
+        }
+        p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff7e5f;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        a:hover {
+            background-color: #feb47b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Project Details</h1>
+        <h2>Cost Estimation:</h2>
+        <p>{{ response }}</p>
+        <h2>Time Estimation:</h2>
+        <p>{{ response2 }}</p>
+        <h2>Manpower Estimation:</h2>
+        <p>{{ response3 }}</p>
+        <h2>Involved Departments:</h2>
+        <p>{{ response4 }}</p>
+        <div>
+            <a href="/">Back to Form</a>
+            <form action="http://localhost:3000/add_to_db" method="POST" style="display:inline;">
+                <input type="hidden" name="project_name" value="{{ project_name }}">
+                <input type="hidden" name="project_description" value="{{ project_description }}">
+                <input type="hidden" name="response" value="{{ response }}">
+                <input type="hidden" name="response2" value="{{ response2 }}">
+                <input type="hidden" name="response3" value="{{ response3 }}">
+                <input type="hidden" name="response4" value="{{ response4 }}">
+                <button type="submit">Add to Database</button>
+            </form>
+        </div>        
+    </div>
+</body>
+</html>
